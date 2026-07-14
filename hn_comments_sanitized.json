@@ -1,0 +1,122 @@
+[
+  {
+    "id": 37737692,
+    "by": "bloopernova",
+    "parent": 37737519,
+    "time": 1696252762,
+    "type": "comment",
+    "text": "What&#x27;s new: <a href=\"https:&#x2F;&#x2F;docs.python.org&#x2F;dev&#x2F;whatsnew&#x2F;3.12.html\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;docs.python.org&#x2F;dev&#x2F;whatsnew&#x2F;3.12.html</a><p>Summary, sorry for poor formatting, I&#x27;m not sure HN can do a list of any kind?<p><i>New features</i><p>More flexible f-string parsing, allowing many things previously disallowed (PEP 701).<p>Support for the buffer protocol in Python code (PEP 688).<p>A new debugging&#x2F;profiling API (PEP 669).<p>Support for isolated subinterpreters with separate Global Interpreter Locks (PEP 684).<p>Even more improved error messages. More exceptions potentially caused by typos now make suggestions to the user.<p>Support for the Linux perf profiler to report Python function names in traces.<p>Many large and small performance improvements (like PEP 709 and support for the BOLT binary optimizer), delivering an estimated 5% overall performance improvement.<p><i>Type annotations</i><p>New type annotation syntax for generic classes (PEP 695).<p>New override decorator for methods (PEP 698).<p><i>Deprecations</i><p>The deprecated wstr and wstr_length members of the C implementation of unicode objects were removed, per PEP 623.<p>In the unittest module, a number of long deprecated methods and classes were removed. (They had been deprecated since Python 3.1 or 3.2).<p>The deprecated smtpd and distutils modules have been removed (see PEP 594 and PEP 632. The setuptools package continues to provide the distutils module.<p>A number of other old, broken and deprecated functions, classes and methods have been removed.<p>Invalid backslash escape sequences in strings now warn with SyntaxWarning instead of DeprecationWarning, making them more visible. (They will become syntax errors in the future.)<p>The internal representation of integers has changed in preparation for performance enhancements. (This should not affect most users as it is an internal detail, but it may cause problems for Cython-generated code.)"
+  },
+  {
+    "id": 37737736,
+    "by": "bluish29",
+    "parent": 37737519,
+    "time": 1696253003,
+    "type": "comment",
+    "text": "I think the support for isolated sub-interpreters with separate Global Interpreter Locks is the most interesting new feature in python. It is doubtful not the best way to offer some sort of concurrency but still a step closer to maybe one day get rid of GILs."
+  },
+  {
+    "id": 37737933,
+    "by": "formerly_proven",
+    "parent": 37737519,
+    "time": 1696253949,
+    "type": "comment",
+    "text": "Breaking changes:<p>PEP 632: Remove the distutils package. See the migration guide for advice replacing the APIs it provided. The third-party Setuptools package continues to provide distutils, if you still require it in Python 3.12 and beyond.<p>gh-95299: Do not pre-install setuptools in virtual environments created with venv. This means that distutils, setuptools, pkg_resources, and easy_install will no longer available by default; to access these run pip install setuptools in the activated virtual environment.<p>The asynchat, asyncore, and imp modules have been removed, along with several unittest.TestCase method aliases."
+  },
+  {
+    "id": 37738392,
+    "by": "dandiep",
+    "parent": 37737519,
+    "time": 1696255911,
+    "type": "comment",
+    "text": "Ooh, seems there is a new syntax for declaring the types of kwargs [1]:<p><pre><code>  from typing import TypedDict, Unpack\n  \n  class Movie(TypedDict):\n    name: str\n    year: int\n\n  def foo(*kwargs: Unpack[Movie]): ...\n</code></pre>\nMaybe now I&#x27;ll be able to actually figure out what data to send libraries without actually reading their source code.<p>1. <a href=\"https:&#x2F;&#x2F;docs.python.org&#x2F;3.12&#x2F;whatsnew&#x2F;3.12.html#pep-692-using-typeddict-for-more-precise-kwargs-typing\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;docs.python.org&#x2F;3.12&#x2F;whatsnew&#x2F;3.12.html#pep-692-usin...</a>"
+  },
+  {
+    "id": 37739502,
+    "by": "georgehotelling",
+    "parent": 37737519,
+    "time": 1696261037,
+    "type": "comment",
+    "text": "I&#x27;m just happy for itertools.batched for chunking iterables: <a href=\"https:&#x2F;&#x2F;docs.python.org&#x2F;3.12&#x2F;library&#x2F;itertools.html#itertools.batched\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;docs.python.org&#x2F;3.12&#x2F;library&#x2F;itertools.html#itertool...</a>"
+  },
+  {
+    "id": 37740297,
+    "by": "philshem",
+    "parent": 37739502,
+    "time": 1696263687,
+    "type": "comment",
+    "text": "Yes. I\u2019ve written explicit code that needed this 100s of times."
+  },
+  {
+    "id": 37741068,
+    "by": "kastden",
+    "parent": 37739502,
+    "time": 1696266240,
+    "type": "comment",
+    "text": "This is the greatest addition since f-strings!"
+  },
+  {
+    "id": 37742836,
+    "by": "kzrdude",
+    "parent": 37739502,
+    "time": 1696273305,
+    "type": "comment",
+    "text": "Great call-out! (Mistakes elided..)"
+  },
+  {
+    "id": 37743193,
+    "by": "intalentive",
+    "parent": 37740297,
+    "time": 1696274880,
+    "type": "comment",
+    "text": "Yeah I&#x27;ve memorized it by now:<p>for i in range(len(lst) &#x2F;&#x2F; batch_size + 1):\n    batch = lst[i * batch_size : (i + 1) * batch_size]"
+  },
+  {
+    "id": 37743832,
+    "by": "zem",
+    "parent": 37739502,
+    "time": 1696277846,
+    "type": "comment",
+    "text": "yeah! that&#x27;s been in the ruby stdlib practically from day one, no idea why python was so resistant to it."
+  },
+  {
+    "id": 37749075,
+    "by": "hddqsb",
+    "parent": 37743193,
+    "time": 1696319866,
+    "type": "comment",
+    "text": "You have a minor bug -- when len(lst) is a multiple of batch_size, this will have an extra iteration at the end with an empty batch. The fixed version is `range((len(lst) + batch_size - 1) &#x2F;&#x2F; batch_size)`, which emulates `ceil(len(lst) &#x2F; batch_size)`. Yet more proof that this should be part of stdlib :)<p>Personally I think I&#x27;d actually write it like this:<p><pre><code>    for i in range(0, len(lst), batch_size):\n        batch = lst[i:i+batch_size]\n</code></pre>\nThe docs give another pretty nice implementation using iter() and islice() in a loop (but it uses the walrus operator `:=` so it requires Python 3.8+ as written)."
+  },
+  {
+    "id": 37750118,
+    "by": "rossant",
+    "parent": 37749075,
+    "time": 1696329968,
+    "type": "comment",
+    "text": "Blatant reason why a native solution was long overdue."
+  },
+  {
+    "id": 37754712,
+    "by": "ehsankia",
+    "parent": 37739502,
+    "time": 1696353124,
+    "type": "comment",
+    "text": "99% of my more_itertools imports are exactly for this.<p>there&#x27;s 1-2 other stuff from more_itertools that I think should make it to itertools. I&#x27;d actually like to see statistics from huge monorepos&#x2F;opensource about usage stats of various more_itertools functions."
+  },
+  {
+    "id": 37757788,
+    "by": "miiiiiike",
+    "parent": 37754712,
+    "time": 1696368369,
+    "type": "comment",
+    "text": "Same but for the \u2018batch\u2019, \u2018ibatch\u2019, and \u2018abatch\u2019 functions I started writing back in 2008."
+  },
+  {
+    "id": 37762840,
+    "by": "abyesilyurt",
+    "parent": 37739502,
+    "time": 1696412072,
+    "type": "comment",
+    "text": "Checkout more-itertools for more variants: <a href=\"https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;more-itertools&#x2F;\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;more-itertools&#x2F;</a>"
+  }
+]

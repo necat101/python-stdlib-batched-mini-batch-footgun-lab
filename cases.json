@@ -1,0 +1,202 @@
+[
+  {
+    "id": "batch_local_token_count_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "pass",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "local_observation"
+    }
+  },
+  {
+    "id": "dropped_incomplete_batch_bias_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "local_observation"
+    }
+  },
+  {
+    "id": "exact_division_batches_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "pass",
+      "manual_reference": "pass",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "flatten_roundtrip_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "pass",
+      "manual_reference": "pass",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "incomplete_final_batch_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "pass",
+      "manual_reference": "pass",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "input_order_preservation_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "pass",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "itertools_batched_available_marker",
+    "expectations": {
+      "inspect_api": "pass",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "itertools_batched_strict_available_marker",
+    "expectations": {
+      "inspect_api": "pass",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "lazy_first_batch_consumption_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "local_observation",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "local_observation",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "math_sumprod_available_marker",
+    "expectations": {
+      "inspect_api": "pass",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "naive_range_extra_empty_batch_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "local_observation",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "negative_batch_size_rejection_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "expected_error",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "no_global_training_speed_or_validity_claim_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "context_only"
+    }
+  },
+  {
+    "id": "python_version_marker",
+    "expectations": {
+      "inspect_api": "pass",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "single_pass_iterator_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "local_observation",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "local_observation",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "strict_exact_division_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "pass",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "strict_incomplete_rejection_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "expected_error",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  },
+  {
+    "id": "tiny_linear_score_equivalence_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "pass",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "local_observation"
+    }
+  },
+  {
+    "id": "unweighted_batch_mean_footgun_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "not_applicable",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "local_observation"
+    }
+  },
+  {
+    "id": "zero_batch_size_rejection_marker",
+    "expectations": {
+      "inspect_api": "not_applicable",
+      "stdlib_batched": "expected_error",
+      "manual_reference": "not_applicable",
+      "streaming_observation": "not_applicable",
+      "hn_ml_context": "not_applicable"
+    }
+  }
+]
